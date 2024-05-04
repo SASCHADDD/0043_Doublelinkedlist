@@ -20,7 +20,7 @@ void addNode()
     cin >> newNode->name; //Assign value to the data field of the new node
 
     // Insert the new node in the list
-    if (START == NULL || newNode-noMhs <= START -> noMhs)
+    if (START == NULL || newNode->noMhs <= START -> noMhs)
     { // step 2: Insert the new node at the beginning
         
         if (START != NULL && newNode->noMhs == START->noMhs)
@@ -52,6 +52,6 @@ void addNode()
          newNode->next = current; // step 4: Make the next field of the new node point to current
          newNode->prev = previous // STEP 5: Make the previous field of the new node point to previous
 
-         i
+         
     }
 }
