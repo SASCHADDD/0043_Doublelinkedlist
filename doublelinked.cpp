@@ -152,6 +152,25 @@ void traverse()
     }
 }
 
+void revtraverse()
+{
+    if (listEmpty())
+        cout << "\nList is empty" << endl;
+    else
+    {
+        cout << "\nRecords in descending order of roll number are:" << endl;
+        Node *currentNode = START;
+        while (currentNode->next != NULL)
+            currentNode = currentNode->next;
+
+        while (currentNode != NULL)
+        {
+            cout << currentNode->noMhs << " " << currentNode->name << endl;
+            currentNode = currentNode->prev;
+        }
+    }
+}
+
 void searchData()
 {
     if (listEmpty() == true)
@@ -170,5 +189,51 @@ void searchData()
         cout << "\nRecord found" << endl;
         cout << "\nRoll number: " << curr->noMhs << endl;
         cout << "\nName: " << curr->name <<endl;
+    }
+}
+
+int main()
+{
+    while (true)
+    {
+        try
+        {
+            cout << "\nMenu" << endl;
+            cout << "1. Add a record to the list" << endl;
+            cout << "2. Delete a record to the list" << endl;
+            cout << "3. View all record in the ascending order of roll numbers" << endl;
+            cout << "4. View all record in the descending order of roll number" << endl;
+            cout << "5. Search for a record in the list" << endl;
+            cout << "6. exit" << endl;
+            cout << "\nEnter your choice (1-6): " ;
+            char ch;
+            cin >> ch;
+
+            switch (ch)
+            {
+            case '1':
+                addNode();
+                break;
+            case '2':
+                deleteNode();
+                break;
+            case '3':
+                traverse();
+                break;
+            case '4':
+                revtraverse();
+                break;
+            case '5':
+                searchData();
+                break;
+            default:
+            cout << "\nInvalid option" << endl;
+                break;
+            }
+        }
+        catch (exception &e)
+        { 
+            cout << "Check for the values entered." << endl;
+        }
     }
 }
