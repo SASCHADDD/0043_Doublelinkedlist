@@ -126,5 +126,6 @@ void deleteNode()
             current->next->prev = previous;
         }
     }
-    
+    // Release the memory of the nonde marked as current
+    delete current;
 }
