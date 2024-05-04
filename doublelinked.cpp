@@ -94,5 +94,6 @@ void deleteNode()
         return;
     }
     
-    current = START; //
+    current = START; // step1: start from the first node
+    previous = NULL;
 }
